@@ -1,0 +1,49 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif 
+}
+
+.timey {
+    float:right;
+    margin-right: 0px;
+}
+
+.starterCard {
+    text-align: center;
+}
+
+.start {
+    background-color:aquamarine;
+    height:70px;
+    width:100px;
+    cursor: pointer;
+}
+
+.start:hover {
+    background-color:rgb(95, 180, 152);
+}
+
+.questionCard {
+    text-align:center;
+    visibility: hidden;
+}
+
+.question {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.ans1, .ans2, .ans3, .ans4 {
+    align-content: center;
+    display:block;
+    padding: 24px 36px;
+    margin-bottom: 8px;
+    margin-left: 300px;
+    cursor: pointer;
+    background-color: aquamarine;
+    height:80px;
+    width:900px;
+}
+
+.ans1:hover, .ans2:hover, .ans3:hover, .ans4:hover{
+    background-color:rgb(95, 180, 152);
+}
