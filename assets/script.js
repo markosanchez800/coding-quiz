@@ -1,6 +1,7 @@
 var timerEl = document.querySelector(".timer");
 var startButton = document.querySelector(".start");
 var startMessage = document.querySelector(".starterCard");
+var hiScoreList = document.querySelector(".hiscorelist");
 var qNA = document.querySelector(".questionCard");
 var question = document.querySelector(".question");
 var yON = document.querySelector(".rightOWrong")
@@ -8,6 +9,12 @@ var ans1 = document.querySelector(".ans1");
 var ans2 = document.querySelector(".ans2");
 var ans3 = document.querySelector(".ans3");
 var ans4 = document.querySelector(".ans4");
+var userScore = JSON.parse(localStorage.getItem("timerCount"));
+if(!userScore){
+    var userScore = [];
+}
+
+//Questions and answers
 qAll = ["Which is not an HTML Semantic Tag?","Which means NOT Equal?","window.alert will...","A useful tool used during debugging to print content is..","Which isn't a common data type?"];
 answerA = ["Footer","==","Close the current page","GitBash","Booleans"];
 answerB = ["Main","?=","Open a new window in browser","console.log","Numbers"];
@@ -165,7 +172,7 @@ function fifthWrong(){
 
 function endGame(){
     qNA.style.visibility="hidden";
-    document.createElement("")
+    hiScoreList.innerHTML = "Your score is: " + timerCount + "<form>Name: <input type='text' id='name' name='name'> <button> Submit </button></form>";
 }
 
 startButton.addEventListener("click",startQuiz);

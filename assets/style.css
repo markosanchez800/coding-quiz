@@ -47,3 +47,20 @@
 .ans1:hover, .ans2:hover, .ans3:hover, .ans4:hover{
     background-color:rgb(95, 180, 152);
 }
+
+#hiscores{
+    border:10px solid rgb(102, 199, 167);
+    border-radius: 15px;
+    height:400px;
+    width:700px;
+    align-content: center;
+    margin-top:10px;
+    margin-bottom: 0px;
+    margin-left: 400px;
+    background-color: aquamarine;
+    
+}
+
+h2 {
+    text-align: center;
+}
