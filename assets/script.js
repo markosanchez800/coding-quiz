@@ -14,10 +14,13 @@ answerB = ["Main","?=","Open a new window in browser","console.log","Numbers"];
 answerC = ["Div","!=","Give a popup window with a message","if statement","Strings"];
 answerD = ["Nav","/=","Give a popup window for user input","for loops","Functions"];
 
+
+
 var timer;
 var timerCount;
 
 function startTimer(){
+    timerCount=50;
     timer = setInterval(function() {
         timerCount--;
         timerEl.textContent=timerCount;
@@ -28,7 +31,6 @@ function startTimer(){
 }
 
 function startQuiz(){
-    timerCount=50;
     startMessage.style.visibility="hidden";
     qNA.style.visibility="visible";
     startTimer();
@@ -101,7 +103,7 @@ function firstRight(){
 }
 function firstWrong(){
     yON.textContent="Wrong";
-    timerCount-10;
+    timerCount-=10;
     second();
 }
 function secondRight(){
@@ -110,7 +112,7 @@ function secondRight(){
 }
 function secondWrong(){
     yON.textContent="Wrong";
-    timerCount-10;
+    timerCount-=10;
     third();
 }
 function thirdRight(){
@@ -119,7 +121,7 @@ function thirdRight(){
 }
 function thirdWrong(){
     yON.textContent="Wrong";
-    timerCount-10;
+    timerCount-=10;
     fourth();
 }
 function fourthRight(){
@@ -128,7 +130,7 @@ function fourthRight(){
 }
 function fourthWrong(){
     yON.textContent="Wrong";
-    timerCount-10;
+    timerCount-=10;
     fifth();
 }
 function fifthRight(){
@@ -136,10 +138,8 @@ function fifthRight(){
 }
 function fifthWrong(){
     yON.textContent="Wrong";
-    timerCount-10;
+    timerCount-=10;
 }
-
-        
 
 
 startButton.addEventListener("click",startQuiz);
