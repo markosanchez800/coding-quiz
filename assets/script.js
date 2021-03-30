@@ -20,14 +20,16 @@ var timer;
 var timerCount;
 
 function startTimer(){
-    timerCount=50;
+    timerCount=40;
     timer = setInterval(function() {
         timerCount--;
-        timerEl.textContent=timerCount;
-    }, 1000);
-    if (timerCount === 0){
+        timerEl.textContent=timerCount;  
+        if (timerCount <= 0){
         clearInterval(timer);
+        endGame();
     }
+    }, 1000);
+
 }
 
 function startQuiz(){
@@ -50,6 +52,10 @@ function first(){
 }
 
 function second(){
+    ans1.removeEventListener("click",firstWrong);
+    ans2.removeEventListener("click",firstWrong);
+    ans3.removeEventListener("click",firstRight);
+    ans4.removeEventListener("click",firstWrong);
     ans1.addEventListener("click",secondWrong);
     ans2.addEventListener("click",secondWrong);
     ans3.addEventListener("click",secondRight);
@@ -62,6 +68,10 @@ function second(){
 }
 
 function third(){
+    ans1.removeEventListener("click",secondWrong);
+    ans2.removeEventListener("click",secondWrong);
+    ans3.removeEventListener("click",secondRight);
+    ans4.removeEventListener("click",secondWrong);
     ans1.addEventListener("click",thirdWrong);
     ans2.addEventListener("click",thirdWrong);
     ans3.addEventListener("click",thirdRight);
@@ -74,6 +84,10 @@ function third(){
 }
 
 function fourth(){
+    ans1.removeEventListener("click",thirdWrong);
+    ans2.removeEventListener("click",thirdWrong);
+    ans3.removeEventListener("click",thirdRight);
+    ans4.removeEventListener("click",thirdWrong);
     ans1.addEventListener("click",fourthWrong);
     ans2.addEventListener("click",fourthRight);
     ans3.addEventListener("click",fourthWrong);
@@ -86,6 +100,10 @@ function fourth(){
 }
 
 function fifth(){
+    ans1.removeEventListener("click",fourthWrong);
+    ans2.removeEventListener("click",fourthWrong);
+    ans3.removeEventListener("click",fourthRight);
+    ans4.removeEventListener("click",fourthWrong);
     ans1.addEventListener("click",fifthWrong);
     ans2.addEventListener("click",fifthWrong);
     ans3.addEventListener("click",fifthWrong);
@@ -134,12 +152,20 @@ function fourthWrong(){
     fifth();
 }
 function fifthRight(){
-    yON.textContent="Correct!";   
+    yON.textContent="Correct!";  
+    clearInterval(timer);
+    endGame(); 
 }
 function fifthWrong(){
     yON.textContent="Wrong";
     timerCount-=10;
+    clearInterval(timer);
+    endGame();
 }
 
+function endGame(){
+    qNA.style.visibility="hidden";
+    document.createElement("")
+}
 
 startButton.addEventListener("click",startQuiz);

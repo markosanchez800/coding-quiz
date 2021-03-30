@@ -10,17 +10,19 @@
         <title>Coding Quiz</title>
     </head>
     <body>
+        <!--Header section holding timer-->
         <header>
             <a href = #hiscores>Check Highscores</a>
-            <div class = "timey">Countdown: <span class= timer>50</span> </div>
+            <div class = "timey">Countdown: <span class= timer>40</span> </div>
         </header>
     <main>
+        <!--Start button-->
         <div class = starterCard>
         <h1>Coding Quiz!</h1>
         <h2>Press the button to start, your time is your score!</h2>
         <button class = "start">Start</button>
         </div>
-
+        <!--Questions N Answers-->
         <div class = questionCard>
             <div class = question> </div>
             <div class = answers>
@@ -31,6 +33,10 @@
             </div>
             <div class = rightOWrong> </div>
         </div>
+        <!--High Scores-->
+        <box id = "hiscores">
+            <span ul class = hiscorelist></span>
+        </box>
     </main>
         
         <script src="./assets/script.js" async defer></script>
