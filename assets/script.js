@@ -10,7 +10,7 @@ var ans2 = document.querySelector(".ans2");
 var ans3 = document.querySelector(".ans3");
 var ans4 = document.querySelector(".ans4");
 var title = document.querySelector(".title");
-var userScore = JSON.parse(localStorage.getItem("timerCount"));
+var highScoresArray = JSON.parse(localStorage.getItem("scores")) || [];
 
 //if(!userScore){
 //    var userScore = [];
@@ -175,7 +175,7 @@ function fifthWrong(){
 
 function endGame(){
     qNA.style.visibility="hidden";
-    title.innerHTML = "Your score is: " + timerCount + "<form>Name:<input type='text' id='name' name='name'><button>Submit</button></form>";
+    title.innerHTML = "Your score is: " + timerCount + "<form>Name:<input type='text' id='name'><button>Submit</button></form>";
 }
 
 
@@ -185,11 +185,13 @@ function endGame(){
 startButton.addEventListener("click",startQuiz);
 
 title.addEventListener("submit",function(event){
-    var name = document.getElementById('#name');
-    userScore = (timerCount + " points :" + name);
-    localStorage.setItem("score",JSON.stringify(userScore));
+    event.preventDefault();
+    var name = document.getElementById('name').value;
+    userScore = (timerCount + " points : " + name);
+    highScoresArray.push(userScore);
+    localStorage.setItem(highScoresArray,JSON.stringify(userScore));
     var li = document.createElement("li");
-    li.textContent = userScore;
+    li.textContent = highScoresArray;
     hiScoreList.append(li);
-    console.log(userScore);
+    localStorage.setItem("keeplist",li);
 })
