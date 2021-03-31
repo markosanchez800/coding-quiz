@@ -9,6 +9,7 @@ var ans1 = document.querySelector(".ans1");
 var ans2 = document.querySelector(".ans2");
 var ans3 = document.querySelector(".ans3");
 var ans4 = document.querySelector(".ans4");
+var title = document.querySelector(".title");
 var userScore = JSON.parse(localStorage.getItem("timerCount"));
 
 if(!userScore){
@@ -188,5 +189,7 @@ hiScoreList.addEventListener("submit",function(event){
     localStorage.setItem(JSON.stringify(userScore));
     var li = document.createElement("li");
     li.textContent = userScore;
-    i++
+    hiScoreList.append(li);
+    i++;
 })
+
