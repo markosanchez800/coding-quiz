@@ -10,6 +10,7 @@ var ans2 = document.querySelector(".ans2");
 var ans3 = document.querySelector(".ans3");
 var ans4 = document.querySelector(".ans4");
 var userScore = JSON.parse(localStorage.getItem("timerCount"));
+
 if(!userScore){
     var userScore = [];
 }
@@ -25,6 +26,7 @@ answerD = ["Nav","/=","Give a popup window for user input","for loops","Function
 
 var timer;
 var timerCount;
+
 
 function startTimer(){
     timerCount=40;
@@ -172,7 +174,19 @@ function fifthWrong(){
 
 function endGame(){
     qNA.style.visibility="hidden";
-    hiScoreList.innerHTML = "Your score is: " + timerCount + "<form>Name: <input type='text' id='name' name='name'> <button> Submit </button></form>";
+    hiScoreList.innerHTML = "Your score is: " + timerCount + "<form>Name:<input type='text' id='name' name='name'><button>Submit</button></form>";
 }
 
+
 startButton.addEventListener("click",startQuiz);
+
+hiScoreList.addEventListener("submit",function(event){
+    event.preventDefault;
+    i=0;
+    var name = document.getElementById("name");
+    userScore[i] = (timerCount + " points :" + name);
+    localStorage.setItem(JSON.stringify(userScore));
+    var li = document.createElement("li");
+    li.textContent = userScore;
+    i++
+})
