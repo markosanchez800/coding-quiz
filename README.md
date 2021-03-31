@@ -4,6 +4,6 @@
 ![SitePicture](codingquiz.png)
 
 ## Deployed Site
-![Site](https://markosanchez800.github.io/coding-quiz/)
+[Site](https://markosanchez800.github.io/coding-quiz/)
 
 ## Technology Used
