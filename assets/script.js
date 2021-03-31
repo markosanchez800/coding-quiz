@@ -12,9 +12,9 @@ var ans4 = document.querySelector(".ans4");
 var title = document.querySelector(".title");
 var userScore = JSON.parse(localStorage.getItem("timerCount"));
 
-if(!userScore){
-    var userScore = [];
-}
+//if(!userScore){
+//    var userScore = [];
+//}
 
 //Questions and answers
 qAll = ["Which is not an HTML Semantic Tag?","Which means NOT Equal?","window.alert will...","A useful tool used during debugging to print content is..","Which isn't a common data type?"];
@@ -185,8 +185,8 @@ function endGame(){
 startButton.addEventListener("click",startQuiz);
 
 title.addEventListener("submit",function(event){
-    var name = document.getElementById("#name");
-    userScore = userScore.push(timerCount + " points :" + name);
+    var name = document.getElementById('#name');
+    userScore = (timerCount + " points :" + name);
     localStorage.setItem("score",JSON.stringify(userScore));
     var li = document.createElement("li");
     li.textContent = userScore;
