@@ -175,21 +175,21 @@ function fifthWrong(){
 
 function endGame(){
     qNA.style.visibility="hidden";
-    hiScoreList.innerHTML = "Your score is: " + timerCount + "<form>Name:<input type='text' id='name' name='name'><button>Submit</button></form>";
+    title.innerHTML = "Your score is: " + timerCount + "<form>Name:<input type='text' id='name' name='name'><button>Submit</button></form>";
 }
+
+
+   
 
 
 startButton.addEventListener("click",startQuiz);
 
-hiScoreList.addEventListener("submit",function(event){
-    event.preventDefault;
-    i=0;
-    var name = document.getElementById("name");
-    userScore[i] = (timerCount + " points :" + name);
-    localStorage.setItem(JSON.stringify(userScore));
+title.addEventListener("submit",function(event){
+    var name = document.getElementById("#name");
+    userScore = userScore.push(timerCount + " points :" + name);
+    localStorage.setItem("score",JSON.stringify(userScore));
     var li = document.createElement("li");
     li.textContent = userScore;
     hiScoreList.append(li);
-    i++;
+    console.log(userScore);
 })
-
